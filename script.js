@@ -1,13 +1,12 @@
-const grid = document.getElementById("grid");
+const grid = document.querySelector("#grid-container");
 
-function makeGrid(rows,cols) {
-    grid.style.setProperty("--grid-rows", rows);
-    grid.style.setProperty("--grid-cols", cols);
-    for (i = 0; i < (rows * cols); i++) {
+
+// Create default grid of 16x16
+createGrid(16);
+
+function createGrid(size) {
+    for (i = 0; i < size**2; i++) { // Starting at a size of 0, increase the size of the x and y axis by size squared
         let cell = document.createElement("div");
-        cell.innerHTML = (i + 1);
-        grid.appendChild(cell).className = "grid-cell";
+        cell++;
     }
-} 
-
-makeGrid(16,16);
+}
