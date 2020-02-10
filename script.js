@@ -1,5 +1,5 @@
 const container = document.querySelector('.container');
-const cell = document.querySelectorAll('.square-div');
+const cell = document.getElementsByClassName('square-div');
 
 
 function createGrid(size) {
@@ -11,11 +11,8 @@ function createGrid(size) {
 }
 
 function hover() {
-    cell.forEach(cell => {cell.addEventListener('mouseover', console.log('hello!'))});
+    cell.addEventListener('click', (event) => {alert('Element clicked through function!');});
 }
-
-console.log(hover());
-
 
 
 
