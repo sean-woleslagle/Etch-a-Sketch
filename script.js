@@ -1,27 +1,19 @@
-const container = document.querySelector('.container');
-const cells = document.getElementsByClassName('square-div');
+const container = document.querySelector('#cells');
+const cells = document.querySelectorAll('cell');
 
-function createGrid(size) {
-    for (i = 0; i < size**2; i++) { // Starting at a size of 0, increase the size of the x and y axis by size squared
-        let div = document.createElement('div');
-        div.classList.toggle('square-div');
-        container.appendChild(div);
-    }
-}
+
+const createGrid = function(size) {
+    for (let grid = 0; grid < size**2; grid++) { // Starting at a size of 0, increase the size of the x and y axis by size squared
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        container.appendChild(cell);
+        cell.addEventListener('mouseover', changeColor);
+    };
+};
+
+const changeColor = function() {
+    this.style.backgroundColor = 'black';
+};
+
 // Create default grid of 16x16
 createGrid(16);
-
-
-function changeColor() {
-    let div = document.querySelector('.square-div');
-    div.style.color = "red";
-}
-
-function hover() {
-    const numCells = cells.length;
-    for (i = 0; i < numCells; i++) {
-        cells[i].addEventListener('mouseover', (event) => changeColor());
-    }
-}
-
-hover();

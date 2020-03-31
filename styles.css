@@ -5,18 +5,18 @@
     text-align: center;
 }
 
-.container {
+#cells {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-evenly;
+    height: 800px;
     width: 800px;
     align-items: center;
     margin: 20px auto;
     list-style: none;
-    position: relative;
 }
   
-.square-div {
+.cell {
     color: white;
     border: 1px solid black;
     padding: 0;
