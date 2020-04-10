@@ -1,38 +1,43 @@
 :root{
     --colNum: 16;
-    background-color: gray;
+    background-color: hsl(0, 0%, 86%)
 }
-header {
+
+.gridCell {
+    height: auto;
+    width: auto;
+    background-color: hsl(0, 0%, 100%);
+}
+
+h1 {
     display: flex;
     justify-content: center;
-    padding: 1px;
+    Padding: 1px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 button {
     display: inline-block;
     padding: 10px;
     margin: 10px;
     background-color: hsl(0, 0%, 100%);
 }
+
 #buttons {
     display: flex;
-    justify-content: center; 
-    padding: 20px;  
+    justify-content: center;   
 }
-#cells {
+
+#gridContainer {
     margin: auto;
     height: 600px;
     width: 600px;
     display: grid;
     grid-template-columns: repeat(var(--colNum), 1fr);
-    border: 20px solid red;
+    border: 2px solid black;
     margin-top: 10px;
 }
-.cell {
-    height: auto;
-    width: auto;
-    background-color: white;
-}
+
 .draw {
     background-color: black;
 }
